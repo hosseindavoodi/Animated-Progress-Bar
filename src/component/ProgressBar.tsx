@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-//import Correct from '@components/icons/Correct'
+import Correct from "./Correct";
 
 type ProgressBarProps = {
   basicInfo?: boolean;
@@ -58,7 +58,7 @@ const ProgressBar = ({
   }, [count]);
 
   return (
-    <>
+    <div className="p-2 w-1/2">
       <p className="p_highlight mb-1">Profile Progress</p>
 
       <div className="w-full bg-slate-200 rounded-full h-6">
@@ -73,15 +73,15 @@ const ProgressBar = ({
         {progressBarItems.map((items) => (
           <li
             key={items.id}
-            className={`flex mb-4 items-center
-              ${items.item ? "text-status-correct" : "text-gray-04"}`}
+            className={`flex mb-4 items-center font-semibold
+              ${items.item ? "text-emerald-500" : "text-gray-04"}`}
           >
-            {/*<Correct />*/}
+            <Correct />
             <p className="micro_highlight ml-[14px]">{items.text}</p>
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 
